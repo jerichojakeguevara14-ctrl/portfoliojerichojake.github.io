@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111;
+  color: #fff;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  background: #222;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* MOVING SERVICES BAR */
+.services-bar {
+  background: #c5a86a;
+  color: #111;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.services-track {
+  display: inline-block;
+  animation: scroll 15s linear infinite;
+}
+
+.services-track span {
+  margin: 0 40px;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ABOUT */
+.about {
+  text-align: center;
+}
+
+.cv-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #c5a86a;
+  color: #111;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* WORK SLIDER */
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: 0.5s;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* NEXT BUTTON */
+.next-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: #c5a86a;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* CONTACT */
+.contact-form {
+  background: #eae6df;
+  padding: 20px;
+  border-radius: 10px;
+  color: #111;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  background: #8c8375;
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div>
+    <h1>Jericho Jake Guevara</h1>
+    <p>E-commerce VA | Customer Service</p>
+  </div>
+</section>
+
+<!-- MOVING SERVICES -->
+<div class="services-bar">
+  <div class="services-track">
+    <span>✦ Administrative Support</span>
+    <span>✦ Customer Support</span>
+    <span>✦ Graphic Design</span>
+    <span>✦ Website Management</span>
+    <span>✦ Data Entry and Research</span>
+    <span>✦ Project Management</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>I am a dedicated Virtual Assistant and Web Developer focused on delivering clean, efficient, and professional work.</p>
+  
+  <!-- DOWNLOAD CV -->
+  <a href="cv.pdf" download class="cv-btn">Download CV</a>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Admin Support</div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card">VA - 2 Years</div>
+    <div class="card">Freelance Web Dev</div>
+  </div>
+</section>
+
+<!-- WORK SLIDER -->
+<section id="work">
+  <h2>My Work</h2>
+  <div class="slider">
+    <div class="slides" id="slides">
+      <div class="slide"><img src="https://picsum.photos/800/400?1"></div>
+      <div class="slide"><img src="https://picsum.photos/800/400?2"></div>
+      <div class="slide"><img src="https://picsum.photos/800/400?3"></div>
+    </div>
+    <button class="next-btn" onclick="nextSlide()">›</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-form">
+    <input type="text" placeholder="Your Name *">
+    <input type="email" placeholder="Your Email *">
+    <input type="text" placeholder="Subject *">
+    <textarea rows="5" placeholder="Your Message *"></textarea>
+    <button onclick="sendMessage()">SEND MESSAGE</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Jericho Jake Guevara</p>
+</footer>
+
+<script>
+let index = 0;
+
+function nextSlide() {
+  const slides = document.getElementById("slides");
+  index++;
+  if(index > 2) index = 0;
+  slides.style.transform = "translateX(" + (-index * 100) + "%)";
+}
+
+function sendMessage() {
+  alert("Message sent!");
+}
+</script>
+
+</body>
+</html>
